@@ -1,0 +1,125 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>9月份与10月份接待情况对比（org 26730）</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f5f7fa;color:#1f2329;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:14px;line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 22px 60px}
+header.top{background:linear-gradient(135deg,#1d39c4 0%,#2f54eb 55%,#597ef7 100%);color:#fff;border-radius:14px;padding:26px 30px 22px;box-shadow:0 6px 22px rgba(29,57,196,.18)}
+header.top h1{margin:0 0 8px;font-size:23px;font-weight:700;letter-spacing:.5px}
+header.top .sub{font-size:13.5px;opacity:.94}
+header.top .pill{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.34);border-radius:999px;padding:3px 12px;margin:10px 8px 0 0;font-size:12.5px}
+h2.sec{font-size:16.5px;margin:30px 0 12px;padding-left:11px;border-left:4px solid #2f54eb;font-weight:700}
+h2.sec small{font-weight:400;color:#8c8c8c;font-size:12.5px;margin-left:8px}
+.card{background:#fff;border:1px solid #e8ecf2;border-radius:12px;padding:18px 20px;box-shadow:0 1px 3px rgba(16,24,40,.04)}
+.summary{white-space:normal;color:#333a45}
+.summary b{color:#1d39c4}
+.summary .kb{color:#cf1322;font-weight:600}
+.summary .kw{color:#18905c;font-weight:600}
+.kgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:12px}
+.kcard{background:#fff;border:1px solid #e8ecf2;border-radius:11px;padding:13px 15px;box-shadow:0 1px 3px rgba(16,24,40,.04)}
+.kcard .kn{font-size:12.5px;color:#6b7280;margin-bottom:8px}
+.kcard .kv{font-size:19px;font-weight:700;color:#1d39c4;line-height:1.25}
+.kcard .ka{font-size:12.5px;color:#8c8c8c;margin-top:4px}
+.kcard .kd{font-size:12.5px;font-weight:600;margin-top:6px}
+.kd.good,.good{color:#cf1322}
+.kd.bad,.bad{color:#18905c}
+.kd.mut,.mut{color:#8c8c8c}
+.gtables{position:relative}
+.gtables>.filterbar{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.gtables>.filterbar label{cursor:pointer;border:1px solid #d6dbe4;background:#fff;border-radius:999px;padding:5px 14px;font-size:12.5px;color:#4b5563;user-select:none}
+.gtables>.filterbar label:hover{border-color:#91a7ff}
+input.gf{position:absolute;width:0;height:0;opacity:0;pointer-events:none}
+.gsec{display:none;background:#fff;border:1px solid #e8ecf2;border-radius:12px;padding:14px 18px 16px;box-shadow:0 1px 3px rgba(16,24,40,.04)}
+.gsec .gt{font-size:14px;font-weight:700;color:#1d39c4;margin:2px 0 10px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:8px 10px;text-align:right;border-bottom:1px solid #eef1f5;white-space:nowrap}
+th{background:#f7f9fc;color:#4b5563;font-weight:600;font-size:12.5px}
+th:first-child,td:first-child{text-align:left}
+td.mn{color:#333a45}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover td{background:#fafbfe}
+.bcd{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px}
+.bcard{background:#fff;border:1px solid #e8ecf2;border-radius:11px;padding:13px 15px 12px;box-shadow:0 1px 3px rgba(16,24,40,.04)}
+.bcard .bt{font-size:13px;font-weight:600;color:#333a45;margin-bottom:4px}
+.bcard .bd{font-size:12px;color:#8c8c8c;font-weight:400;margin-left:6px}
+.brow{display:flex;align-items:center;gap:8px;margin-top:5px}
+.brow .bl{flex:0 0 88px;width:88px;font-size:11.5px;color:#8c8c8c;text-align:right;line-height:1.3}
+.brow .btk{flex:1 1 auto;height:17px;background:#f2f5fb;border-radius:4px;overflow:hidden;min-width:40px}
+.brow .bf{height:100%;border-radius:4px}
+.brow .bv{flex:0 0 92px;font-size:12px;color:#1d39c4;font-weight:600;font-variant-numeric:tabular-nums;text-align:left}
+.bcard.q .brow{margin-top:3px}
+.bcard.q .brow .bl{flex:0 0 96px;width:96px}
+.reasons td.num{font-variant-numeric:tabular-nums}
+.note{background:#fbfcfe;border:1px dashed #d6dbe4;border-radius:10px;padding:14px 18px;color:#5b6472;font-size:12.5px}
+.note li{margin:3px 0}
+.concl{color:#333a45}
+.concl b{color:#1d39c4}
+footer{margin-top:26px;text-align:center;color:#a8b0bd;font-size:12px}
+
+#gf-all:checked ~ .gsec{display:block}
+#gf-all:checked ~ .filterbar label[for="gf-all"]{background:#2f54eb;border-color:#2f54eb;color:#fff}
+#gf-0:checked ~ .gsec-0{display:block}
+#gf-0:checked ~ .filterbar label[for="gf-0"]{background:#2f54eb;border-color:#2f54eb;color:#fff}
+#gf-1:checked ~ .gsec-1{display:block}
+#gf-1:checked ~ .filterbar label[for="gf-1"]{background:#2f54eb;border-color:#2f54eb;color:#fff}
+#gf-2:checked ~ .gsec-2{display:block}
+#gf-2:checked ~ .filterbar label[for="gf-2"]{background:#2f54eb;border-color:#2f54eb;color:#fff}
+</style></head><body><div class="wrap">
+<header class="top">
+  <h1>9月份与10月份接待情况对比 <small style="font-size:14px;font-weight:400">org 26730 · 10月起白天关闭AI回复</small></h1>
+  <div class="sub">2026.09（上期）　vs　2026.10（本期） ｜ 全平台汇总 ｜ 21 项可比指标</div>
+  <div><span class="pill">上期 2026-09-01 ~ 09-30</span><span class="pill">本期 2026-10-01 ~ 10-31</span><span class="pill">口径：月度环比 · 累计（分子合计 / 分母合计）</span></div>
+</header>
+
+<h2 class="sec">执行摘要</h2>
+<div class="card summary">本页对比 org 26730 在 <b>2026.09</b>（2026-09-01~09-30）与 <b>2026.10</b>（2026-10-01~10-31）两个自然月的<b>接待指标</b>（全平台汇总，共 21 项可比指标，覆盖售前接待、响应时效、人工乐聊三个板块）。该客户自 10 月起在<b>白天时段关闭 AI 回复</b>功能，接待结构随之出现明显迁移，总体呈「<b>机器人让位于人工、整体转化与响应时效不降反升</b>」的格局。
+
+<b>接待规模放量</b>：售前接待买家 9,876→10,597<span class="kb">（+7.3%）</span>，接待转化率 14.30%→15.14%<span class="kb">（+0.84pp）</span>，接待后下单金额 ¥60,846→¥66,931<span class="kb">（+10.0%）</span>；响应买家问题数 21,003→25,811<span class="mut">（+22.9%）</span>，与接待量同步增长约 23%。
+
+<b>关闭AI的结构效应直接体现在接待侧</b>：机器人接待买家占比由 57.70% 降至 48.62%<span class="kw">（-9.08pp）</span>（机器人接待 5,698→5,152，-9.6%）；人工接待 5,734→6,352<span class="kb">（+10.8%）</span>，人工接待转化率 7.74%→10.63%<span class="kb">（+2.89pp）</span>，人工接待后下单金额 +47.0%。整体接待转化率不降反升，本期数据<b>未看到关闭AI对转化的损伤</b>。
+
+<b>人工承接量上升但时效全面改善</b>：人工平均响应时长 0h24m→0h22m<span class="kb">（-2min / -7.4%）</span>，人工 1 分钟内响应率 21.99%→28.21%<span class="kb">（+6.22pp）</span>，3 分钟内 33.40%→42.20%<span class="kb">（+8.80pp）</span>；买家咨询平均等待接待时长 6h16m→5h60m<span class="kb">（-16min / -4.3%）</span>，1 分钟内被人工接待率 21.29%→26.85%<span class="kb">（+5.56pp）</span>。但绝对水平仍偏高（平均响应 21 分钟+、平均等待约 6 小时），夜间无 AI 兜底时段的体验需持续关注。
+
+<b>渠道结构：乐聊承接占比进一步提高</b>：乐聊接待买家数 17,976→21,320<span class="kb">（+18.6%）</span>，非乐聊接待 860→564<span class="kb">（-34.4%）</span>，非乐聊接待占比 4.57%→2.58%<span class="kb">（-1.99pp）</span>，会话进一步向乐聊收拢，便于统一质检与数据沉淀。</div>
+
+<h2 class="sec">核心指标总览 <small>本期值 / 上期值 / 同比变化（红=向好，绿=走弱）</small></h2>
+<div class="kgrid"><div class="kcard"><div class="kn">接待买家数</div><div class="kv">10,597</div><div class="ka">上期 9,876</div><div class="kd good">▲ +7.3%</div></div><div class="kcard"><div class="kn">接待转化率</div><div class="kv">15.14%</div><div class="ka">上期 14.30%</div><div class="kd good">▲ +0.84pp</div></div><div class="kcard"><div class="kn">接待后下单金额(元)</div><div class="kv">¥66,931</div><div class="ka">上期 ¥60,846</div><div class="kd good">▲ +10.0%</div></div><div class="kcard"><div class="kn">人工接待买家数</div><div class="kv">6,352</div><div class="ka">上期 5,734</div><div class="kd good">▲ +10.8%</div></div><div class="kcard"><div class="kn">人工接待转化率</div><div class="kv">10.63%</div><div class="ka">上期 7.74%</div><div class="kd good">▲ +2.89pp</div></div><div class="kcard"><div class="kn">机器人接待买家占比</div><div class="kv">48.62%</div><div class="ka">上期 57.70%</div><div class="kd bad">▼ -9.08pp</div></div><div class="kcard"><div class="kn">响应买家问题数</div><div class="kv">25,811</div><div class="ka">上期 21,003</div><div class="kd mut">+22.9%</div></div><div class="kcard"><div class="kn">人工接待平均响应时长</div><div class="kv">0h22m</div><div class="ka">上期 0h24m</div><div class="kd good">▲ -2min / -7.4%</div></div><div class="kcard"><div class="kn">人工1分钟内响应率</div><div class="kv">28.21%</div><div class="ka">上期 21.99%</div><div class="kd good">▲ +6.22pp</div></div><div class="kcard"><div class="kn">买家咨询平均等待接待时长</div><div class="kv">5h60m</div><div class="ka">上期 6h16m</div><div class="kd good">▲ -16min / -4.3%</div></div></div>
+
+<h2 class="sec">关键指标对比 <small>条形长度按同一指标两期取值等比缩放</small></h2>
+<div class="bcd"><div class="bcard"><div class="bt">接待买家数<span class="bd good">变化 +7.3%</span></div><div class="brow"><span class="bl">2026.09</span><div class="btk"><div class="bf" style="width:93.2%;background:#5b8ff9"></div></div><span class="bv">9,876</span></div><div class="brow"><span class="bl">2026.10</span><div class="btk"><div class="bf" style="width:100.0%;background:#9254de"></div></div><span class="bv">10,597</span></div></div><div class="bcard"><div class="bt">接待转化率<span class="bd good">变化 +0.84pp</span></div><div class="brow"><span class="bl">2026.09</span><div class="btk"><div class="bf" style="width:94.5%;background:#5b8ff9"></div></div><span class="bv">14.30%</span></div><div class="brow"><span class="bl">2026.10</span><div class="btk"><div class="bf" style="width:100.0%;background:#9254de"></div></div><span class="bv">15.14%</span></div></div><div class="bcard"><div class="bt">接待后下单金额(元)<span class="bd good">变化 +10.0%</span></div><div class="brow"><span class="bl">2026.09</span><div class="btk"><div class="bf" style="width:90.9%;background:#5b8ff9"></div></div><span class="bv">¥60,846</span></div><div class="brow"><span class="bl">2026.10</span><div class="btk"><div class="bf" style="width:100.0%;background:#9254de"></div></div><span class="bv">¥66,931</span></div></div><div class="bcard"><div class="bt">人工接待买家数<span class="bd good">变化 +10.8%</span></div><div class="brow"><span class="bl">2026.09</span><div class="btk"><div class="bf" style="width:90.3%;background:#5b8ff9"></div></div><span class="bv">5,734</span></div><div class="brow"><span class="bl">2026.10</span><div class="btk"><div class="bf" style="width:100.0%;background:#9254de"></div></div><span class="bv">6,352</span></div></div><div class="bcard"><div class="bt">人工接待转化率<span class="bd good">变化 +2.89pp</span></div><div class="brow"><span class="bl">2026.09</span><div class="btk"><div class="bf" style="width:72.8%;background:#5b8ff9"></div></div><span class="bv">7.74%</span></div><div class="brow"><span class="bl">2026.10</span><div class="btk"><div class="bf" style="width:100.0%;background:#9254de"></div></div><span class="bv">10.63%</span></div></div><div class="bcard"><div class="bt">机器人接待买家数<span class="bd bad">变化 -9.6%</span></div><div class="brow"><span class="bl">2026.09</span><div class="btk"><div class="bf" style="width:100.0%;background:#5b8ff9"></div></div><span class="bv">5,698</span></div><div class="brow"><span class="bl">2026.10</span><div class="btk"><div class="bf" style="width:90.4%;background:#9254de"></div></div><span class="bv">5,152</span></div></div><div class="bcard"><div class="bt">机器人接待转化率<span class="bd bad">变化 -0.48pp</span></div><div class="brow"><span class="bl">2026.09</span><div class="btk"><div class="bf" style="width:100.0%;background:#5b8ff9"></div></div><span class="bv">20.32%</span></div><div class="brow"><span class="bl">2026.10</span><div class="btk"><div class="bf" style="width:97.6%;background:#9254de"></div></div><span class="bv">19.84%</span></div></div><div class="bcard"><div class="bt">机器人接待买家占比<span class="bd bad">变化 -9.08pp</span></div><div class="brow"><span class="bl">2026.09</span><div class="btk"><div class="bf" style="width:100.0%;background:#5b8ff9"></div></div><span class="bv">57.70%</span></div><div class="brow"><span class="bl">2026.10</span><div class="btk"><div class="bf" style="width:84.3%;background:#9254de"></div></div><span class="bv">48.62%</span></div></div><div class="bcard"><div class="bt">人工接待平均响应时长<span class="bd good">变化 -2min / -7.4%</span></div><div class="brow"><span class="bl">2026.09</span><div class="btk"><div class="bf" style="width:100.0%;background:#5b8ff9"></div></div><span class="bv">0h24m</span></div><div class="brow"><span class="bl">2026.10</span><div class="btk"><div class="bf" style="width:92.6%;background:#9254de"></div></div><span class="bv">0h22m</span></div></div><div class="bcard"><div class="bt">人工1分钟内响应率<span class="bd good">变化 +6.22pp</span></div><div class="brow"><span class="bl">2026.09</span><div class="btk"><div class="bf" style="width:78.0%;background:#5b8ff9"></div></div><span class="bv">21.99%</span></div><div class="brow"><span class="bl">2026.10</span><div class="btk"><div class="bf" style="width:100.0%;background:#9254de"></div></div><span class="bv">28.21%</span></div></div><div class="bcard"><div class="bt">买家咨询平均等待接待时长<span class="bd good">变化 -16min / -4.3%</span></div><div class="brow"><span class="bl">2026.09</span><div class="btk"><div class="bf" style="width:100.0%;background:#5b8ff9"></div></div><span class="bv">6h16m</span></div><div class="brow"><span class="bl">2026.10</span><div class="btk"><div class="bf" style="width:95.7%;background:#9254de"></div></div><span class="bv">5h60m</span></div></div><div class="bcard"><div class="bt">乐聊接待买家数<span class="bd good">变化 +18.6%</span></div><div class="brow"><span class="bl">2026.09</span><div class="btk"><div class="bf" style="width:84.3%;background:#5b8ff9"></div></div><span class="bv">17,976</span></div><div class="brow"><span class="bl">2026.10</span><div class="btk"><div class="bf" style="width:100.0%;background:#9254de"></div></div><span class="bv">21,320</span></div></div></div>
+
+<h2 class="sec">人工 vs 机器人 <small>售前接待承接的自动化迁移</small></h2>
+<div class="bcd"><div class="bcard q"><div class="bt">售前接待买家人数：人工 vs 机器人</div><div class="brow"><span class="bl">人工 · 上期</span><div class="btk"><div class="bf" style="width:90.3%;background:#b37feb"></div></div><span class="bv" style="color:#531dab">5,734</span></div><div class="brow"><span class="bl">人工 · 本期</span><div class="btk"><div class="bf" style="width:100.0%;background:#722ed1"></div></div><span class="bv" style="color:#531dab">6,352</span></div><div class="brow"><span class="bl">机器人 · 上期</span><div class="btk"><div class="bf" style="width:89.7%;background:#5cdbd3"></div></div><span class="bv" style="color:#006d75">5,698</span></div><div class="brow"><span class="bl">机器人 · 本期</span><div class="btk"><div class="bf" style="width:81.1%;background:#08979c"></div></div><span class="bv" style="color:#006d75">5,152</span></div></div><div class="bcard q"><div class="bt">售前接待转化率：人工 vs 机器人</div><div class="brow"><span class="bl">人工 · 上期</span><div class="btk"><div class="bf" style="width:38.1%;background:#b37feb"></div></div><span class="bv" style="color:#531dab">7.74%</span></div><div class="brow"><span class="bl">人工 · 本期</span><div class="btk"><div class="bf" style="width:52.3%;background:#722ed1"></div></div><span class="bv" style="color:#531dab">10.63%</span></div><div class="brow"><span class="bl">机器人 · 上期</span><div class="btk"><div class="bf" style="width:100.0%;background:#5cdbd3"></div></div><span class="bv" style="color:#006d75">20.32%</span></div><div class="brow"><span class="bl">机器人 · 本期</span><div class="btk"><div class="bf" style="width:97.6%;background:#08979c"></div></div><span class="bv" style="color:#006d75">19.84%</span></div></div><div class="bcard q"><div class="bt">售前接待后下单金额：人工 vs 机器人</div><div class="brow"><span class="bl">人工 · 上期</span><div class="btk"><div class="bf" style="width:34.9%;background:#b37feb"></div></div><span class="bv" style="color:#531dab">17,746</span></div><div class="brow"><span class="bl">人工 · 本期</span><div class="btk"><div class="bf" style="width:51.3%;background:#722ed1"></div></div><span class="bv" style="color:#531dab">26,094</span></div><div class="brow"><span class="bl">机器人 · 上期</span><div class="btk"><div class="bf" style="width:100.0%;background:#5cdbd3"></div></div><span class="bv" style="color:#006d75">50,894</span></div><div class="brow"><span class="bl">机器人 · 本期</span><div class="btk"><div class="bf" style="width:86.7%;background:#08979c"></div></div><span class="bv" style="color:#006d75">44,146</span></div></div></div>
+
+<h2 class="sec">分板块明细 <small>点击标签切换板块</small></h2>
+<div class="gtables">
+<input class="gf" type="radio" name="gf" id="gf-all" checked>
+<input class="gf" type="radio" name="gf" id="gf-0"><input class="gf" type="radio" name="gf" id="gf-1"><input class="gf" type="radio" name="gf" id="gf-2">
+<div class="filterbar"><label for="gf-all">全部</label><label for="gf-0">售前转化</label><label for="gf-1">响应时效</label><label for="gf-2">人工乐聊</label></div>
+<section class="gsec gsec-0"><div class="gt">售前转化</div><table><thead><tr><th>指标</th><th>2026.09</th><th>2026.10</th><th>环比变化</th></tr></thead><tbody><tr><td class="mn">接待买家数</td><td>9,876</td><td>10,597</td><td class="good">+7.3%</td></tr><tr><td class="mn">接待转化率</td><td>14.30%</td><td>15.14%</td><td class="good">+0.84pp</td></tr><tr><td class="mn">接待后下单金额(元)</td><td>¥60,846</td><td>¥66,931</td><td class="good">+10.0%</td></tr><tr><td class="mn">人工接待买家数</td><td>5,734</td><td>6,352</td><td class="good">+10.8%</td></tr><tr><td class="mn">人工接待转化率</td><td>7.74%</td><td>10.63%</td><td class="good">+2.89pp</td></tr><tr><td class="mn">机器人接待买家数</td><td>5,698</td><td>5,152</td><td class="bad">-9.6%</td></tr><tr><td class="mn">机器人接待转化率</td><td>20.32%</td><td>19.84%</td><td class="bad">-0.48pp</td></tr><tr><td class="mn">机器人接待买家占比</td><td>57.70%</td><td>48.62%</td><td class="bad">-9.08pp</td></tr></tbody></table></section><section class="gsec gsec-1"><div class="gt">响应时效</div><table><thead><tr><th>指标</th><th>2026.09</th><th>2026.10</th><th>环比变化</th></tr></thead><tbody><tr><td class="mn">响应买家问题数</td><td>21,003</td><td>25,811</td><td class="mut">+22.9%</td></tr><tr><td class="mn">人工接待平均响应时长</td><td>0h24m</td><td>0h22m</td><td class="good">-2min / -7.4%</td></tr><tr><td class="mn">人工1分钟内响应率</td><td>21.99%</td><td>28.21%</td><td class="good">+6.22pp</td></tr><tr><td class="mn">人工3分钟内响应率</td><td>33.40%</td><td>42.20%</td><td class="good">+8.80pp</td></tr><tr><td class="mn">人工5分钟内响应率</td><td>39.12%</td><td>48.24%</td><td class="good">+9.12pp</td></tr><tr><td class="mn">买家咨询平均等待接待时长</td><td>6h16m</td><td>5h60m</td><td class="good">-16min / -4.3%</td></tr><tr><td class="mn">买家咨询1分钟内接待率</td><td>21.29%</td><td>26.85%</td><td class="good">+5.56pp</td></tr><tr><td class="mn">买家咨询3分钟内接待率</td><td>31.99%</td><td>39.88%</td><td class="good">+7.89pp</td></tr><tr><td class="mn">买家咨询30分钟内接待率</td><td>53.36%</td><td>58.90%</td><td class="good">+5.54pp</td></tr></tbody></table></section><section class="gsec gsec-2"><div class="gt">人工乐聊</div><table><thead><tr><th>指标</th><th>2026.09</th><th>2026.10</th><th>环比变化</th></tr></thead><tbody><tr><td class="mn">乐聊接待买家数</td><td>17,976</td><td>21,320</td><td class="good">+18.6%</td></tr><tr><td class="mn">非乐聊接待买家数</td><td>860</td><td>564</td><td class="good">-34.4%</td></tr><tr><td class="mn">非乐聊接待买家占比</td><td>4.57%</td><td>2.58%</td><td class="good">-1.99pp</td></tr></tbody></table></section>
+</div>
+
+<h2 class="sec">客服维度明细 <small>全部客服账号（含非乐聊帐号与机器人账号）；「新」=本期新增，「停」=本期无接待</small></h2>
+<div class="card" style="overflow-x:auto"><table><thead><tr><th rowspan="2">客服</th><th colspan="3">接待量</th><th colspan="2">接待转化率</th><th colspan="2">平均响应时长</th></tr><tr><th>上期</th><th>本期</th><th>环比</th><th>上期</th><th>本期</th><th>上期</th><th>本期</th></tr></thead><tbody><tr><td class="mn">XIAOJING</td><td>1,539</td><td>2,475</td><td><span class="good">+60.8%</span></td><td>10.27%</td><td>12.48%</td><td>0h12m</td><td>0h28m</td></tr><tr><td class="mn">zhouyan</td><td>2,003</td><td>2,231</td><td><span class="good">+11.4%</span></td><td>11.03%</td><td>14.39%</td><td>0h25m</td><td>0h14m</td></tr><tr><td class="mn">chenyu</td><td>1,157</td><td>943</td><td><span class="bad">-18.5%</span></td><td>1.56%</td><td>1.70%</td><td>0h27m</td><td>0h23m</td></tr><tr><td class="mn">46</td><td>820</td><td>664</td><td><span class="bad">-19.0%</span></td><td>1.71%</td><td>2.71%</td><td>0h19m</td><td>0h21m</td></tr><tr><td class="mn">非乐聊帐号</td><td>269</td><td>79</td><td><span class="bad">-70.6%</span></td><td>15.24%</td><td>24.05%</td><td>0h47m</td><td>0h38m</td></tr><tr><td class="mn">xieyuxi</td><td>4</td><td>1</td><td><span class="bad">-75.0%</span></td><td>25.00%</td><td>0.00%</td><td>3h03m</td><td>0h28m</td></tr><tr><td class="mn"><b>各账号合计</b></td><td><b>5,792</b></td><td><b>6,393</b></td><td class="good"><b>+10.4%</b></td><td colspan="4"></td></tr></tbody></table></div>
+
+<h2 class="sec">结论与建议</h2>
+<div class="card concl"><b>核心结论：白天关闭 AI 回复后，接待结构如期迁移，且未付出转化与时效的代价</b>。机器人接待买家占比 57.70%→48.62%（-9.08pp），人工接待量 +10.8%；同期整体接待转化率 +0.84pp、人工平均响应时长缩短 2 分钟、人工 1 分钟响应率 +6.22pp。人工接待转化率大幅上升（+2.89pp）说明：高意向咨询直接落到人工的承接效率更高，本期数据<b>不支持「关闭AI伤转化」的担忧</b>。机器人侧转化率仅微降（20.32%→19.84%），剩余夜间/兜底场景的机器人承接质量保持稳定。
+
+<b>需要盯住的风险</b>：响应时效的绝对水平仍高（人工平均响应 0h22m、买家平均等待 5h60m，30 分钟内被人工接待率仅 58.90%），10 月是「量增时效改善」的良好组合，但白天关闭 AI 后人工承接压力随接待量上行，且夜间时段已无 AI 兜底，需防止等待时长随单量反弹。
+
+<b>建议</b>：① 若转化与时效的改善在 11 月延续，可评估将「人工直达」模式固化到更多高价值时段，或转为「AI 辅助筛选 + 人工直达」的混合模式，同时为夜间补齐 AI 兜底；② 响应目标：将人工 1 分钟响应率从 28.21% 向 35% 推进、买家 30 分钟内接待率向 65% 推进，重点压缩等待超 30 分钟的会话占比；③ 配置人力排班与监控告警：以日均接待量增长约 7%、响应问题数增长约 23% 为基准，提前校准白天时段人工坐席数，避免时效指标随量回撤。</div>
+
+<h2 class="sec">口径说明</h2>
+<div class="note"><ul>
+<li>数据源：乐聊 Metabase 看板《客户健康指标 -新》（dashboard 177），org 26730，<b>未加平台 / 站点筛选</b>（Shopee / Lazada / TikTok 等全平台汇总）。看板数据实际更新至 2026-11-04。</li>
+<li>上期 = 2026-09-01 ~ 2026-09-30（30 天）；本期 = 2026-10-01 ~ 2026-10-31（31 天），均为完整自然月；两期相差 1 天（约 3%），规模类环比已含该因素。</li>
+<li><b>业务背景：该客户自 2026 年 10 月起在白天时段关闭 AI 回复功能。</b>看板为全天汇总口径，无分时段（白天 / 夜间）数据，无法直接拆分关闭时段的影响，本页所有结论均为全月净效应；机器人相关指标的变化需结合该运营动作解读。</li>
+<li>比率类指标为累计口径（分子合计 ÷ 分母合计），非各月比率的算术平均；计数类为区间合计；时长类为加权平均。</li>
+<li>「客服维度明细」取自看板中按客服账号分行的卡片（售前接待量 / 转化率 / 响应时长）。</li>
+<li>变化列口径：比率类用 pp（百分点），计数与金额类用 %，时长类同时给出分钟差与相对变化。</li>
+<li>颜色：<span class="good">红色 = 向好</span>，<span class="bad">绿色 = 走弱</span>（按各指标「越高越好 / 越低越好」方向判定）；无方向指标为灰色。</li>
+</ul></div>
+
+<footer>纯 HTML + CSS 实现（无脚本、无外部依赖） ｜ 生成于 2026-11-06 ｜ 数据来源：乐聊 Metabase embed 看板</footer>
+</div></body></html>
